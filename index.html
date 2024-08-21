@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: url(07.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .portfolio {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+            opacity: 0.9;
+            position: relative;
+        }
+
+        .profile-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding-top: 50px;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.8);
+            animation: float 3s ease-in-out infinite;
+            margin-left: 20px;
+        }
+
+        .text-section {
+            text-align: left;
+            flex-grow: 1;
+            padding-right: 20px;
+        }
+
+        h1 {
+            margin: 0 0 10px;
+            font-size: 2rem;
+            color: #333;
+            
+        }
+
+        p {
+            margin: 0;
+            font-size: 1rem;
+            color: #555;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            font-size: 1.5rem;
+            color: #777;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover.facebook {
+            color: #3b5998;
+        }
+
+        .social-icons a:hover.whatsapp {
+            color: #25d366;
+        }
+
+        .social-icons a:hover.instagram {
+            color: #e4405f;
+        }
+
+        .social-icons a:hover.twitter {
+            color: #2b82ff    ;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            padding: 10px 0;
+            text-align: center;
+            color: white;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .social-icons {
+            margin-top: 50px;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <div class="portfolio">
+        <div class="navbar">
+            <a href="#">Home</a>
+            <a href="#">Follow</a>
+            <a href="#">Call</a>
+            <a href="#">Contact</a>
+        </div>
+        <div class="profile-content">
+            <div class="text-section">
+                <h1>Obama Mulondo Victor</h1>
+                <p>I am a kid coder🖥️, I am 15 years old, I study in Rwanda, and I am interested in learning coding and both frontend and backend development. Next-gen into national exam of S3.</p>
+            </div>
+            <img src="Polish_20240819_150312957.jpg" alt="Profile Image" class="profile-image">
+        </div>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=100070408451497" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://whatsapp.com" target="_blank" class="whatsapp"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" class="twitter"><i class="fab fa-x-twitter"></i></a>
+        </div>
+    </div>
+    <script>
+        // JavaScript function to handle the "Contact" click
+        document.getElementById('contact-link').addEventListener('click', function(event) {
+            event.preventDefault();  // Prevent default anchor behavior
+            window.location.href = 'tel:0787880064';  // Open the dialer with the number
+        });
+    </script>
+
+</body>
+
+</html>
