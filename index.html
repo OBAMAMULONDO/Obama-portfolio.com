@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -31,7 +30,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             max-width: 800px;
             width: 100%;
-            opacity: 0.9;
             position: relative;
         }
 
@@ -48,9 +46,10 @@
             width: 150px;
             height: 150px;
             object-fit: cover;
-            box-shadow: 0 0 15px 10px rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
             animation: float 3s ease-in-out infinite;
             margin-left: 20px;
+            opacity: 1; /* Ensure the profile image is fully opaque */
         }
 
         .text-section {
@@ -63,7 +62,6 @@
             margin: 0 0 10px;
             font-size: 2rem;
             color: #333;
-            
         }
 
         p {
@@ -76,13 +74,73 @@
             0% {
                 transform: translateY(0);
             }
-
             50% {
                 transform: translateY(-20px);
             }
-
             100% {
                 transform: translateY(0);
+            }
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #333;
+            padding: 10px;
+            border-radius: 10px 0 0 0;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            font-size: 1.2rem;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .navbar-toggle {
+            display: none;
+        }
+
+        .navbar-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .navbar-menu.show {
+            display: flex;
+        }
+
+        .navbar-toggle {
+            display: block;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            border: none;
+        }
+
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+            }
+            
+            .navbar-menu.show {
+                display: flex;
+            }
+            
+            .navbar-toggle {
+                display: block;
             }
         }
 
@@ -93,7 +151,7 @@
         }
 
         .social-icons a {
-            margin: 0 10px;
+            margin: 0 15px; /* Add space between social icons */
             text-decoration: none;
             font-size: 1.5rem;
             color: #777;
@@ -113,46 +171,21 @@
         }
 
         .social-icons a:hover.twitter {
-            color: #2b82ff    ;
-        }
-
-        .navbar {
-            position: absolute;
-            top: 0;
-            width: 100%;
-            background-color: #333;
-            padding: 10px 0;
-            text-align: center;
-            color: white;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.2rem;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .social-icons {
-            margin-top: 50px;
+            color: #2b82ff;
         }
     </style>
-    
 </head>
 
 <body>
-
     <div class="portfolio">
         <div class="navbar">
-            <a href="#">Home</a>
-            <a href="#">Follow</a>
-            <a href="#">Call</a>
-            <a href="#">Contact</a>
+            <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+            <div class="navbar-menu">
+                <a href="#">Home</a>
+                <a href="#">Follow</a>
+                <a href="#">Call</a>
+                <a href="#">Contact</a>
+            </div>
         </div>
         <div class="profile-content">
             <div class="text-section">
@@ -169,13 +202,11 @@
         </div>
     </div>
     <script>
-        // JavaScript function to handle the "Contact" click
-        document.getElementById('contact-link').addEventListener('click', function(event) {
-            event.preventDefault();  // Prevent default anchor behavior
-            window.location.href = 'tel:0787880064';  // Open the dialer with the number
-        });
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar-menu');
+            menu.classList.toggle('show');
+        }
     </script>
-
 </body>
 
 </html>
